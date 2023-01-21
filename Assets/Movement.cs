@@ -5,10 +5,13 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed = 10;
+    public float leftRightDistance = 10;
+    public float upDownDistance = 10;
 
     public void Move() {
         Vector2 movement = MovementFromInput();
         transform.Translate(movement);
+        RestrictPosition();
     }
 
     public Vector2 MovementFromInput() {
@@ -16,6 +19,13 @@ public class Movement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(x, y);
         return movement.normalized * Time.deltaTime * speed;
+    }
+
+    void RestrictPosition() {
+        Vector3 position = transform.position;
+        position.x = Mathf.Clamp(position.x, -leftRightDistance, leftRightDistance);
+        position.y = Mathf.Clamp(position.y, -upDownDistance, upDownDistance);
+        transform.position = position;
     }
     void Start()
     {
