@@ -20,7 +20,6 @@ public class EnemyMovement : MonoBehaviour
     void Move() {
         var movement = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, player.position, movement);
-
     }
 
 }
