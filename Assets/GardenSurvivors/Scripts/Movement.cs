@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     public float leftRightDistance = 10;
     public float upDownDistance = 10;
 
+    private Animator _animator;
+    private SpriteRenderer _renderer;
+
     public void Move() {
         Vector2 movement = MovementFromInput();
         transform.Translate(movement);
@@ -18,6 +21,17 @@ public class Movement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(x, y);
+
+        if (x == 0 && y == 0)
+            _animator.SetBool("isRunning", false);
+        else 
+            _animator.SetBool("isRunning", true);
+
+        if (x < 0)
+            _renderer.flipX = true;
+        if (x > 0) 
+            _renderer.flipX = false;
+
         return movement.normalized * Time.deltaTime * speed;
     }
 
@@ -29,7 +43,8 @@ public class Movement : MonoBehaviour
     }
     void Start()
     {
-        
+        _animator = GetComponent<Animator>();
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame

@@ -6,18 +6,15 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private float health = 10;
-    
-    
-    [SerializeField]
-    private HealthUpdate update;
+
 
     [SerializeField]
-    private GameObject gameOverScreen;
+    private UIManager uiManager;
     private void OnCollisionEnter2D(Collision2D collision) {
         GameObject enemy = collision.gameObject;
         Enemy zombie = enemy.GetComponent<Enemy>();
         GetHurt(zombie.Damage());
-        update.UpdateHealth(health);
+        uiManager.UpdateHealth(health);
         
         Destroy(enemy);
     }
@@ -29,7 +26,8 @@ public class Player : MonoBehaviour
         health -= damage;
 
         if (health == 0) {
-            gameOverScreen.SetActive(true);
+            uiManager.ShowLoseScreen();
+
             gameObject.SetActive(false);
         }
     }
