@@ -8,5 +8,8 @@ public class Enemy : MonoBehaviour
     private float damage = 1;
 
     public float Damage() => damage;
-  
+
+    private void OnDestroy() {
+        EnemySpawner.RemoveZombie(this);
+    }
 }

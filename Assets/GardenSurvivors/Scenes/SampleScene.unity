@@ -973,6 +973,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   uiManager: {fileID: 717573733}
+--- !u!114 &1155628932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155628917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11074ad1827be439697cdb0d9544e960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
+  projectile: {fileID: 4055960040157432713, guid: 927f6ce98c45649d6836a55bef85d00c, type: 3}
+  spawner: {fileID: 1499215535}
 --- !u!1 &1249668969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftRightDistance: 10
   upDownDistance: 8
-  enemy: {fileID: 7213413714513499529, guid: 57d529957cb3244b7b3a37c516c37e24, type: 3}
+  enemy: {fileID: -3839636489423354948, guid: 57d529957cb3244b7b3a37c516c37e24, type: 3}
   spawnTime: 0.5
   player: {fileID: 1155628924}
 --- !u!4 &1499215536
