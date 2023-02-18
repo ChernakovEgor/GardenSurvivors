@@ -973,6 +973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   uiManager: {fileID: 717573733}
+  blood: {fileID: 8403257160970018042, guid: 32f193b849a6f45e0927dcdc2fc32507, type: 3}
 --- !u!114 &1155628932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,8 +986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11074ad1827be439697cdb0d9544e960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
-  projectile: {fileID: 4055960040157432713, guid: 927f6ce98c45649d6836a55bef85d00c, type: 3}
+  fireRate: 2
+  projectile: {fileID: 9016943552803074495, guid: 6dc68c1e788594cd09b4ad1614807ab2, type: 3}
   spawner: {fileID: 1499215535}
 --- !u!1 &1249668969
 GameObject:
