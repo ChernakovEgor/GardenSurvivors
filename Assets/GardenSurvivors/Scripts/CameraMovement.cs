@@ -24,7 +24,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Move() {
         Vector3 position = player.position;
-        float x = Mathf.Clamp(position.x, -leftRightDistance, leftRightDistance);
+        float x = Mathf.Clamp(position.x, -Game.GetLevel.MapWidth, Game.GetLevel.MapWidth);
         float y = Mathf.Clamp(position.y, -upDownDistance, upDownDistance);
         transform.position = new Vector3(x, y, -10);
     }
