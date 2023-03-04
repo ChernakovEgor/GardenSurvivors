@@ -5,7 +5,6 @@ public static class Game
     private static Level _level;
     public static Level GetLevel => _level;
 
-    private static string levelName;
 
     public static void SetLevel(Level newLevel) {
         if (_level == null) {
