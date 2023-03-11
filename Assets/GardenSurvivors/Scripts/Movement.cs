@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
 
     private Animator _animator;
     private SpriteRenderer _renderer;
+    private Player _player;
 
     public void Move() {
         Vector2 movement = MovementFromInput();
@@ -27,10 +28,14 @@ public class Movement : MonoBehaviour
         else 
             _animator.SetBool("isRunning", true);
 
-        if (x < 0)
+        if (x < 0) {
             _renderer.flipX = true;
-        if (x > 0) 
+            _player.Weapon.SetFlip(true);
+        }
+        if (x > 0) {
             _renderer.flipX = false;
+            _player.Weapon.SetFlip(false);
+        }
 
         return movement.normalized * Time.deltaTime * speed;
     }
@@ -41,10 +46,11 @@ public class Movement : MonoBehaviour
         position.y = Mathf.Clamp(position.y, -upDownDistance, upDownDistance);
         transform.position = position;
     }
-    void Start()
+    void Awake()
     {
         _animator = GetComponent<Animator>();
         _renderer = GetComponent<SpriteRenderer>();
+        _player = GetComponent<Player>();
     }
 
     // Update is called once per frame

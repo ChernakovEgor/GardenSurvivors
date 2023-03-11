@@ -1106,34 +1106,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6936466254698015624, guid: 0dce81c5600aa4f5aa033d20e43f71fc, type: 3}
   m_PrefabInstance: {fileID: 20354534987635301}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1155628927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155628917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3a082d4723a64b938859302809dc60f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  blood: {fileID: 8403257160970018042, guid: 32f193b849a6f45e0927dcdc2fc32507, type: 3}
---- !u!114 &1155628932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155628917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11074ad1827be439697cdb0d9544e960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireRate: 2
-  projectile: {fileID: 9016943552803074495, guid: 6dc68c1e788594cd09b4ad1614807ab2, type: 3}
 --- !u!1 &1249668969
 GameObject:
   m_ObjectHideFlags: 0
