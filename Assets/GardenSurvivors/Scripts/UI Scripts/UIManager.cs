@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField]
-    private LoseScreen loseScreen;
-    
-    [SerializeField]
-    private HealthUpdate healthUpdate;
+    [SerializeField] private LoseScreen loseScreen;
+    [SerializeField] private HealthUpdate healthUpdate;
+    [SerializeField] private GameObject[] screens;
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private Score _score;
 
-    [SerializeField]
-    private GameObject[] screens;
-
-    [SerializeField]
-    private GameObject canvas;
+    public void SetScore(int valueToShow) {
+        _score.Set(valueToShow);
+    }
 
     public void ShowLoseScreen() {
         //loseScreen.gameObject.SetActive(true);

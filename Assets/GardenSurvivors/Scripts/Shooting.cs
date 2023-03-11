@@ -8,18 +8,16 @@ public class Shooting : MonoBehaviour
     private float fireRate;
     [SerializeField]
     private GameObject projectile;
-    [SerializeField]
-    private EnemySpawner spawner;
     private float _timeToShoot;
 
     private Enemy GetNearestEnemy() {
-        if (EnemySpawner.SpawnedZombies.Count == 0)
+        if (Game.GetLevel.SpawnedZombies.Count == 0)
             return null;
 
         Vector3 position = transform.position;
-        Enemy nearestEnemy = EnemySpawner.SpawnedZombies[0];
+        Enemy nearestEnemy = Game.GetLevel.SpawnedZombies[0];
         float minDistance = Vector3.Distance(position, nearestEnemy.transform.position);
-        foreach (Enemy enemy in EnemySpawner.SpawnedZombies) {
+        foreach (Enemy enemy in Game.GetLevel.SpawnedZombies) {
             float distance = Vector3.Distance(position, enemy.transform.position);
             if (distance < minDistance) {
                 nearestEnemy = enemy;

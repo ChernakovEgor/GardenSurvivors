@@ -16,8 +16,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private Transform player;
 
-    private static List<Enemy> _spawnedZombies = new List<Enemy>();
-    public static List<Enemy> SpawnedZombies => _spawnedZombies; 
     void Start()
     {
         InvokeRepeating("SpawnEnemy", spawnTime, spawnTime);
@@ -27,7 +25,8 @@ public class EnemySpawner : MonoBehaviour
         float x = Random.Range(-leftRightDistance, leftRightDistance);
         float y = Random.Range(-upDownDistance, upDownDistance);
         Enemy zombie = Instantiate(enemy);
-        _spawnedZombies.Add(zombie);
+        //_spawnedZombies.Add(zombie);
+        Game.GetLevel.AddEnemy(zombie);
         zombie.transform.position = new Vector3(x, y, 0);
         SetupZombie(zombie.gameObject);
     }
@@ -35,9 +34,5 @@ public class EnemySpawner : MonoBehaviour
     private void SetupZombie(GameObject zombie) {
         EnemyMovement movement = zombie.GetComponent<EnemyMovement>();
         movement.player = player;
-    }
-
-    public static void RemoveZombie(Enemy zombie) {
-        _spawnedZombies.Remove(zombie);
     }
 }
