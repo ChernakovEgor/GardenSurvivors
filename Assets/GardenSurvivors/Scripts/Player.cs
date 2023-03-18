@@ -9,10 +9,21 @@ public class Player : MonoBehaviour
     [SerializeField] private Weapon _weapon;
     public Weapon Weapon => _weapon;
     private float _timeToScore;
+    private AudioSource _audio;
+
+    public void Heal(float amount) {
+        health += amount;
+        if (health > 10)
+            health = 10;
+        Game.GetLevel.OnPlayerTakeDamage(health);
+    }
+
+    private void Awake() {
+        _audio = GetComponent<AudioSource>();
+    }
 
     private void Update() {
         if (Time.time > _timeToScore) {
-            Debug.Log(Time.time);
             Game.GetLevel.UpdateScore(1);
             _timeToScore = Time.time + 1.0f;
         }
@@ -41,6 +52,7 @@ public class Player : MonoBehaviour
             gameObject.SetActive(false);
         }
 
+        _audio.Play();
         Instantiate(blood, transform.position, Quaternion.identity);
     }
 }
